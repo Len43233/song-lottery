@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机歌曲抽奖</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 50px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        h1 {
+            color: #333;
+        }
+        #result {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #ff5722;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>随机歌曲抽奖</h1>
+        <p>点击按钮随机抽取一首歌</p>
+        <div id="result">🎵 你的歌曲将在这里显示 🎵</div>
+        <button onclick="drawSong()">抽取歌曲</button>
+    </div>
+
+    <script>
+        const songs = [
+            "爱情转移", "安静", "安和桥", "阿刁", "阿楚姑娘", "Melody", "Too Bad", "Play",
+            "Bye Bye", "Can’t Take My Eyes Off You", "Dear Diary", "Don’t Panic",
+            "Honey Honey", "Interstellar", "Let It Go", "Lifted", "Love Song",
+            "No Fear In My Heart", "Shallow", "Stitches", "Trust Me"
+        ];
+
+        function drawSong() {
+            const randomIndex = Math.floor(Math.random() * songs.length);
+            document.getElementById("result").innerText = songs[randomIndex];
+        }
+    </script>
+</body>
+</html>
